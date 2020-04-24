@@ -1,0 +1,113 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: install
+          command: npm install --ignore-engines
+      - run:
+          name: build
+          command: npm run build
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - ./node_modules
+
+  lint:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: lint
+          command: npm run lint
+
+  # no tests yet! :(((
+  # test:
+  #   working_directory: ~/project
+  #   docker:
+  #     - image: circleci/node:12
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #         at: ./
+  #     - run:
+  #         name: test
+  #         command: npm run test
+  #     - run:
+  #         name: coverage
+  #         command: npx codecov
+
+  # test_linux:
+  #   working_directory: ~/project
+  #   docker:
+  #     - image: circleci/node:12
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #         at: ./
+  #     - run:
+  #         name: test
+  #         command: npm run test
+  #     - run:
+  #         name: test_e2e
+  #         command: npm run test:e2e
+  #     - run:
+  #         name: coverage
+  #         command: npx codecov
+
+  # test_windows:
+  #   executor: win/default
+  #   working_directory: ~/project
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: install
+  #         command: npm install --ignore-engines
+  #     - run:
+  #         name: test
+  #         command: npm run test
+  #     - run:
+  #         name: test_e2e
+  #         command: npm run test:e2e
+
+  release:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: release
+          command: npm run semantic-release
+
+workflows:
+  version: 2.1
+  project:
+    jobs:
+      - build
+      - lint:
+          requires:
+            - build
+      - release:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - lint
