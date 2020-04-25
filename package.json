@@ -2,7 +2,9 @@
   "name": "lockfile-prune",
   "version": "0.0.0-development",
   "description": "Lockfiles have needs too and this package takes care of them",
-  "main": "index.js",
+  "bin": {
+    "lockfile-prune": "./bin/lockfile-prune.js"
+  },
   "engines": {
     "node": ">=10.0.0"
   },
@@ -37,7 +39,9 @@
     "type": "git",
     "url": "https://github.com/lirantal/lockfile-prune.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
