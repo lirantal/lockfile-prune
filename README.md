@@ -10,7 +10,7 @@
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/v/lockfile-prune" alt="npm version"/></a>
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/license/lockfile-prune" alt="license"/></a>
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/dt/lockfile-prune" alt="downloads"/></a>
-  <a href="https://travis-ci.org/lirantal/lockfile-prune"><img src="https://badgen.net/travis/lirantal/lockfile-prune" alt="build"/></a>
+  <a href="https://circleci.com/gh/lirantal/lockfile-prune"><img src="https://circleci.com/gh/lirantal/lockfile-prune.svg?style=svg" alt="build"/></a>
   <a href="https://codecov.io/gh/lirantal/lockfile-prune"><img src="https://badgen.net/codecov/c/github/lirantal/lockfile-prune" alt="codecov"/></a>
   <a href="https://snyk.io/test/github/lirantal/lockfile-prune"><img src="https://snyk.io/test/github/lirantal/lockfile-prune/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
