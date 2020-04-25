@@ -27,6 +27,26 @@ either `npm-shrinkwrap.json` or `package-lock.json`.
 npx lockfile-prune <path/to/lockfile>
 ```
 
+# Example
+
+If you use this as part of an automated flow for releasing packages with
+something like `semantic-release` then you only need to npx' the lockfile
+before the release process.
+
+However, you can also automate it in the following way, by adding these
+run-script hooks into `package.json`:
+
+```json
+ "scripts": {
+   "prepublishOnly": "npx lockfile-prune npm-shrinkwrap.json",
+   "postpublish": "git checkout npm-shrinkwrap.json"
+}
+```
+
+The `postpublish` hook isn't strictly necessary on build systems but
+can prove useful to maintain the same git tree if you are publishing
+from a local development machine.
+
 # Contributing
 
 Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing to this project.
