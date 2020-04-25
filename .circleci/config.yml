@@ -11,9 +11,6 @@ jobs:
       - run:
           name: install
           command: npm install --ignore-engines
-      - run:
-          name: build
-          command: npm run build
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
@@ -35,21 +32,20 @@ jobs:
           name: lint
           command: npm run lint
 
-  # no tests yet! :(((
-  # test:
-  #   working_directory: ~/project
-  #   docker:
-  #     - image: circleci/node:12
-  #   steps:
-  #     - checkout
-  #     - attach_workspace:
-  #         at: ./
-  #     - run:
-  #         name: test
-  #         command: npm run test
-  #     - run:
-  #         name: coverage
-  #         command: npx codecov
+  test:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: test
+          command: npm run test
+      - run:
+          name: coverage
+          command: npx codecov
 
   # test_linux:
   #   working_directory: ~/project
@@ -104,10 +100,13 @@ workflows:
       - lint:
           requires:
             - build
+      - test:
+          requires:
+            - lint
       - release:
           filters:
             branches:
               only:
                 - master
           requires:
-            - lint
+            - test
