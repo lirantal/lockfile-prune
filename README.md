@@ -10,7 +10,7 @@
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/v/lockfile-prune" alt="npm version"/></a>
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/license/lockfile-prune" alt="license"/></a>
   <a href="https://www.npmjs.org/package/lockfile-prune"><img src="https://badgen.net/npm/dt/lockfile-prune" alt="downloads"/></a>
-  <a href="https://github.com/lirantal/lockfile-prune/actions/workflows/main.yml"><img src="https://github.com/lirantal/lockfile-prune/actions/workflows/main.yml/badge.svg" alt="build"/></a>
+  <a href="https://github.com/lirantal/lockfile-prune/actions/workflows/main.yml"><img src="https://github.com/lirantal/lockfile-prune/actions/workflows/main.yml/badge.svg?branch=master" alt="build"/></a>
   <a href="https://codecov.io/gh/lirantal/lockfile-prune"><img src="https://badgen.net/codecov/c/github/lirantal/lockfile-prune" alt="codecov"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
