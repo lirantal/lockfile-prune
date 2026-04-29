@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/lirantal/lockfile-prune/compare/v1.0.1...v1.0.2) (2026-04-29)
+
+
+### Bug Fixes
+
+* pin CI status badge to default branch ([#5](https://github.com/lirantal/lockfile-prune/issues/5)) ([4922a1f](https://github.com/lirantal/lockfile-prune/commit/4922a1f1d540af6c74f05d7c328aef9bfe42656a))
+
 ## [1.0.1](https://github.com/lirantal/lockfile-prune/compare/v1.0.0...v1.0.1) (2026-04-27)
 
 
