@@ -45,7 +45,7 @@ jobs:
           node-version: '24'
           cache: 'npm'
       - run: npm ci
-      - run: npm run semantic-release
+      - run: npx --no-install semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
