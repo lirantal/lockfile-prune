@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/lirantal/lockfile-prune/compare/v1.0.5...v1.0.6) (2026-11-03)
+
+
+### Bug Fixes
+
+* **ci:** pin package-manager toolchains ([#10](https://github.com/lirantal/lockfile-prune/issues/10)) ([f5bf99c](https://github.com/lirantal/lockfile-prune/commit/f5bf99c66bf95bf029124add0284d886c97510dd))
+
 ## [1.0.5](https://github.com/lirantal/lockfile-prune/compare/v1.0.4...v1.0.5) (2026-08-07)
 
 ## [1.0.4](https://github.com/lirantal/lockfile-prune/compare/v1.0.3...v1.0.4) (2026-05-17)
