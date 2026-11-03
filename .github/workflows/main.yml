@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: '24.x'
           cache: 'npm'
+      - name: Set up pinned npm
+        run: bash "${{ github.workspace }}/.github/scripts/setup-npm.sh"
       - run: npm ci
       - run: npm run lint
       - run: npm run lint:markdown
@@ -35,6 +37,8 @@ jobs:
         with:
           node-version: '24.x'
           cache: 'npm'
+      - name: Set up pinned npm
+        run: bash "${{ github.workspace }}/.github/scripts/setup-npm.sh"
       - run: npm ci
       - run: npm run test
 
@@ -53,6 +57,8 @@ jobs:
         with:
           node-version: '24.x'
           cache: 'npm'
+      - name: Set up pinned npm
+        run: bash "${{ github.workspace }}/.github/scripts/setup-npm.sh"
       - run: npm ci
       - run: npx --no-install semantic-release
         env:

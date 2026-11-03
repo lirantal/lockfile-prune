@@ -180,7 +180,9 @@
     "access": "public"
   },
   "release": {
-    "branches": ["master"],
+    "branches": [
+      "master"
+    ],
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
@@ -220,5 +222,6 @@
       ],
       "@semantic-release/github"
     ]
-  }
+  },
+  "packageManager": "npm@11.21.0"
 }
